@@ -1,7 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
-
-module.exports = nextConfig
+module.exports = {
+  env: {
+    MONGO_URI:
+      'mongodb+srv://ecommerce:ecommerce@ecommerce.2he8o.mongodb.net/ecommerce?retryWrites=true&w=majority',
+  },
+};
