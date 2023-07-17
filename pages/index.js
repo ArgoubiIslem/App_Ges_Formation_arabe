@@ -2,12 +2,23 @@ import Head from 'next/head';
 import Image from 'next/image';
 import axios from 'axios';
 
+import { Store } from '../utils/Store';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
-
+import data from '/utils/data';
+import { getStaticPaths } from 'next';
 import nc from 'next-connect';
 import React, { useContext, useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 export default function Home() {
+  const { state, dispatch } = useContext(Store);
+
+  const { userInfo } = state;
+  const router = useRouter();
+  const { redirect } = router.query;
+  if (userInfo) {
+    router.push('/DashboardLayout');
+  }
   useEffect(() => {
     const sign_in_btn = document.querySelector('#sign-in-btn');
     const sign_up_btn = document.querySelector('#sign-up-btn');
@@ -30,22 +41,48 @@ export default function Home() {
       sign_in_btn.removeEventListener('click', handleSignIn);
     };
   }, []);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post('/api/users/login', {
+        email,
+        password,
+      });
+      dispatch({ type: 'USER_LOGIN', payload: data });
+      Cookies.set('userInfo', data);
+      router.push(redirect || '/');
+    } catch (err) {
+      alert(err.message);
+    }
+  };
 
   return (
     <div>
       <div className="container">
         <div className="forms-container">
           <div className="signin-signup">
-            <form action="#" className="sign-in-form">
+            <form action="#" className="sign-in-form" onSubmit={submitHandler}>
               <h2 className="title">تسجيل الدخول</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
 
-                <input type="email" placeholder="ادخل اسم المستخدم" />
+                <input
+                  type="email"
+                  placeholder="ادخل اسم المستخدم"
+                  id="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
-                <input type="password" placeholder="أدخل كلمة المرور" />
+                <input
+                  type="password"
+                  placeholder="أدخل كلمة المرور"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
               <input type="submit" value="تسجيل الدخول" className="btn solid" />
               <p className="social-text">

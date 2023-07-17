@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-
+import { getStaticPaths } from 'next';
 const dbConnect = async () => {
   try {
     const db = await mongoose.connect(

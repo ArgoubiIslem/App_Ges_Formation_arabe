@@ -9,21 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/material": "^5.14.0",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
+    "eslint-plugin-react-hooks": "^5.0.0-canary-546fe4681-20230713",
+    "isomorphic-unfetch": "^4.0.2",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.2",
     "next": "13.4.9",
     "next-connect": "^0.12.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "postcss": "^8.4.25",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.3"
   }
 }
