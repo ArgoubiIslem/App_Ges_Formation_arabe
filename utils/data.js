@@ -31,7 +31,8 @@ const data = {
   cycles: [
     {
       nom: 'Photoshope ui/ux',
-      image: 'TEst.jpg',
+      image:
+        'https://www.cerfi.ch/Htdocs/Images/Pictures/puid_e2ad9412-cca4-4eaf-961c-570cf0f342eb_3354.jpg',
       prix: 230,
       description: 'formation test test test test',
       formateurun: 'ali',
@@ -43,7 +44,8 @@ const data = {
     },
     {
       nom: 'Photoshope ui/ux',
-      image: 'TEst.jpg',
+      image:
+        'https://www.cerfi.ch/Htdocs/Images/Pictures/puid_e2ad9412-cca4-4eaf-961c-570cf0f342eb_3354.jpg',
       prix: 230,
       description: 'formation test test test test',
       formateurun: 'ali',
@@ -52,6 +54,30 @@ const data = {
       dateDebut: new Date('2023-07-23'),
       dateFin: new Date('2023-07-23'),
       salle: 23,
+    },
+  ],
+  participants: [
+    {
+      nomPrenom: 'Islem Argoubi',
+      entreprise: ' cni',
+      fix: 71234769,
+      fax: 71234769,
+      tel: 22234769,
+      mail: 'argoubiislem@gmail.com',
+      cycle: 'Photoshope',
+      salle: 12,
+      dateDebut: new Date('2023-07-23'),
+    },
+    {
+      nomPrenom: 'Islem Argoubi',
+      entreprise: ' cni',
+      fix: 71234769,
+      fax: 71234769,
+      tel: 22234769,
+      mail: 'argoubiislem@gmail.com',
+      cycle: 'Photoshope',
+      salle: 12,
+      dateDebut: new Date('2023-07-23'),
     },
   ],
 };

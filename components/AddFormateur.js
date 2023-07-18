@@ -76,7 +76,7 @@ const AddFormateur = () => {
               >
                 <div className="">
                   <label className="text-gray-00 block text-sm" for="cus_name">
-                    nomPrenom
+                    الإسم واللقب
                   </label>
                   <input
                     className="w-full rounded bg-gray-200 px-5 py-1 text-gray-700"
@@ -91,7 +91,7 @@ const AddFormateur = () => {
                 </div>
                 <div className="">
                   <label className="text-gray-00 block text-sm" for="cus_name">
-                    specialite
+                    التخصص
                   </label>
                   <input
                     className="w-full rounded bg-gray-200 px-5 py-1 text-gray-700"
@@ -109,7 +109,7 @@ const AddFormateur = () => {
                     className="block text-sm text-gray-600"
                     for="cus_email"
                   >
-                    direction
+                    المؤسسة
                   </label>
                   <input
                     className="w-full rounded  bg-gray-200 px-5 py-4 text-gray-700"
@@ -126,7 +126,7 @@ const AddFormateur = () => {
                     className="block text-sm text-gray-600"
                     for="cus_email"
                   >
-                    entreprise
+                    الشركة
                   </label>
                   <input
                     className="w-full rounded  bg-gray-200 px-5 py-4 text-gray-700"
@@ -144,7 +144,7 @@ const AddFormateur = () => {
                     className="focus:shadow-outline rounded bg-blue-500 py-2 px-4 font-bold text-white shadow hover:bg-blue-500 focus:outline-none"
                     type="submit"
                   >
-                    Ajouter un formateur
+                    إضافة مدرب
                   </button>
                 </div>
               </form>

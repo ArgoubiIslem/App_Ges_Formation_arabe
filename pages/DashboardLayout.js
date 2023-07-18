@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Dashboard from '../components/Dashboard';
 import Formateur from '../components/Formateur';
 import Formation from '../components/Formation';
-import Participant from '../components/Participant';
+import Participants from '../components/Participants';
 import Cycle from '../components/Cycle';
 import { useState } from 'react';
 export default function DashboardLayout() {
@@ -31,7 +31,7 @@ export default function DashboardLayout() {
           {showCycle ? <Cycle /> : null}
           {showForm ? <Formateur /> : null}
           {showFormat ? <Formation /> : null}
-          {showPart ? <Participant /> : null}
+          {showPart ? <Participants /> : null}
         </main>
       </div>
     </div>
