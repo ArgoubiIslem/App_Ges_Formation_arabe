@@ -47,6 +47,39 @@ function Participants() {
     setSearchTerm(value);
   };
 
+  const handleExportData = () => {
+    // Assuming formateursData is the array of formateur objects
+    if (participantsData) {
+      exportDataToCSV(participantsData);
+    }
+  };
+  function exportDataToCSV(data) {
+    const csvRows = [];
+
+    // Add CSV headers
+    const headers = Object.keys(data[0]);
+    csvRows.push(headers.join(','));
+
+    // Add each row of data as CSV
+    data.forEach((item) => {
+      const values = headers.map((header) => item[header]);
+      csvRows.push(values.join(','));
+    });
+
+    // Combine rows into a single CSV string
+    const csvString = csvRows.join('\n');
+
+    // Create a Blob and a download link
+    const blob = new Blob([csvString], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'formateurs.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
   return (
     <div className=" ">
       <div className="">
@@ -55,6 +88,12 @@ function Participants() {
           href="/NewProduct"
           className="mt-4 flex items-center border-l-4 px-6 py-2 duration-200"
         > */}
+          <button
+            onClick={handleExportData}
+            className="mr-6 bg-grey-light hover:bg-grey text-grey-darkest inline-flex items-center rounded bg-green-500 py-2 px-7 font-bold text-white"
+          >
+            <span>تصدير البيانات</span>
+          </button>
           <button
             onClick={() =>
               !newParticipant

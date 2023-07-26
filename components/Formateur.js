@@ -46,6 +46,38 @@ function Formateurs() {
     let value = e.target.value;
     setSearchTerm(value);
   };
+  const handleExportData = () => {
+    // Assuming formateursData is the array of formateur objects
+    if (formateursData) {
+      exportDataToCSV(formateursData);
+    }
+  };
+  function exportDataToCSV(data) {
+    const csvRows = [];
+
+    // Add CSV headers
+    const headers = Object.keys(data[0]);
+    csvRows.push(headers.join(','));
+
+    // Add each row of data as CSV
+    data.forEach((item) => {
+      const values = headers.map((header) => item[header]);
+      csvRows.push(values.join(','));
+    });
+
+    // Combine rows into a single CSV string
+    const csvString = csvRows.join('\n');
+
+    // Create a Blob and a download link
+    const blob = new Blob([csvString], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'formateurs.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
 
   return (
     <div className=" ">
@@ -56,10 +88,16 @@ function Formateurs() {
           className="mt-4 flex items-center border-l-4 px-6 py-2 duration-200"
         > */}
           <button
+            onClick={handleExportData}
+            className="mr-6 bg-grey-light hover:bg-grey text-grey-darkest inline-flex items-center rounded bg-green-500 py-2 px-7 font-bold text-white"
+          >
+            <span>تصدير البيانات</span>
+          </button>
+          <button
             onClick={() =>
               !newFormateur ? setNewFormateur(true) : setNewFormateur(false)
             }
-            className="bg-grey-light hover:bg-grey text-grey-darkest inline-flex items-center rounded bg-blue-600 py-2 px-4 font-bold text-white"
+            className=" mr-3 bg-grey-light hover:bg-grey text-grey-darkest inline-flex items-center rounded bg-blue-600 py-2 px-4 font-bold text-white"
           >
             <svg
               className="h-3 w-3 text-white"
@@ -78,6 +116,7 @@ function Formateurs() {
             </svg>
             <span> اضافة مدرب</span>
           </button>
+
           {/* </Link> */}
         </div>
         <div className="min-w-screen flex  min-h-screen  justify-center overflow-hidden bg-gray-100 font-sans  ">

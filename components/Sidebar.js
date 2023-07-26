@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Sidebar({ cycle, form, format, part, dash }) {
   return (
@@ -11,7 +11,7 @@ export default function Sidebar({ cycle, form, format, part, dash }) {
       <div className="min-h-screen flex flex-row bg-gray-100">
         <div className="flex flex-col w-56 bg-white rounded-r-3xl overflow-hidden">
           <div className="flex items-center justify-center h-20 shadow-md">
-            <h1 className="text-3xl uppercase text-indigo-500">Logo</h1>
+            <h1 className="text-3xl uppercase text-indigo-500"></h1>
           </div>
           <ul className="flex flex-col py-4">
             <li
@@ -119,6 +119,7 @@ export default function Sidebar({ cycle, form, format, part, dash }) {
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
                   <i className="bx bx-log-out"></i>
                 </span>
+
                 <span className="text-sm font-medium">تسجيل خروج</span>
               </a>
             </li>

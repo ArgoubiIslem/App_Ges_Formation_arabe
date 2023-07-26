@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import fetch from 'isomorphic-unfetch';
 import Loader from './Loader';
 import { Select } from '@material-ui/core';
-const AddParticipant = ({ cycle }) => {
+const Insc = ({ cycle }) => {
   const [cyclesData, setCyclesData] = useState(null);
 
   const [form, setForm] = useState({
@@ -101,7 +101,7 @@ const AddParticipant = ({ cycle }) => {
               <Loader />
             ) : (
               <form
-                className="m-4  rounded bg-white p-20 shadow-xl"
+                className="m-4  rounded bg-white p-10 shadow-xl grid grid-cols-2 grid-rows-2 gap-2 overflow-hidden"
                 onSubmit={handleSubmit}
               >
                 <div className="">
@@ -282,4 +282,4 @@ const AddParticipant = ({ cycle }) => {
   );
 };
 
-export default AddParticipant;
+export default Insc;

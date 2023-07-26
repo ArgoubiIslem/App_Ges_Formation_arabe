@@ -1,12 +1,9 @@
 import Head from 'next/head';
 
 import Headers from '../components/Headers';
-import Carousels from '../components/Carousels';
-import Landing from '../components/Landing';
-import Favorie from '../components/Favorie';
-import CycleW from '../components/CycleW';
+import Insc from '../components/Insc';
 import Footer from '../components/Footer';
-export default function Home() {
+export default function Inscription() {
   return (
     <div>
       <Head>
@@ -17,22 +14,14 @@ export default function Home() {
       <div>
         <Headers />
       </div>
-      <div>
-        <Carousels />
-      </div>
+      <div></div>
 
       <div className="flex justify-center">
-        {' '}
-        <Landing />
+        <Insc />{' '}
       </div>
-      <div className="flex justify-center">
-        {' '}
-        <CycleW />
-      </div>
+      <div className="flex justify-center"> </div>
 
-      <div className="flex justify-center">
-        <Favorie />
-      </div>
+      <div className="flex justify-center"></div>
       <div>
         <Footer />{' '}
       </div>
